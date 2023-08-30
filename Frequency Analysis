@@ -1,0 +1,11 @@
+def analyze_frequency(audio_data, sample_rate):
+    fft_result = np.fft.fft(audio_data)
+    frequencies = np.fft.fftfreq(len(fft_result), 1/sample_rate)
+
+    magnitude = np.abs(fft_result)
+    dominant_frequency = frequencies[np.argmax(magnitude)]
+
+    return dominant_frequency
+
+dominant_frequency = analyze_frequency(audio_data, sample_rate)
+print(f"Dominant Frequency: {dominant_frequency:.2f} Hz")
