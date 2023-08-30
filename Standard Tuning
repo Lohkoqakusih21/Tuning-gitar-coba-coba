@@ -1,0 +1,9 @@
+standard_tuning_frequencies = [82.41, 110.00, 146.83, 196.00, 246.94, 329.63]
+string_names = ['E6', 'A5', 'D4', 'G3', 'B2', 'E1']
+
+closest_string = min(standard_tuning_frequencies, key=lambda x: abs(x - dominant_frequency))
+string_index = standard_tuning_frequencies.index(closest_string)
+string_name = string_names[string_index]
+
+print(f"Detected Frequency: {dominant_frequency:.2f} Hz")
+print(f"Closest String: {string_name} ({closest_string:.2f} Hz)")
